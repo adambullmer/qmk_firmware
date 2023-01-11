@@ -585,6 +585,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case G_BEGIN + 1 ... (G_END - 1):
             if (record->event.pressed) {
                 SEND_STRING(PSTR(sendstring_commands[keycode - G_INIT]));
+                layer_off(_GL);
             }
             return false;
         default:
