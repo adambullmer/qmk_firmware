@@ -35,8 +35,22 @@ enum ctrl_layers {
      ****************************************/
 };
 
-enum ctrl_keycodes {
-    L_BRI = SAFE_RANGE, // LED Brightness Increase
+// Basic keycodes to be sure to include, like debug and bootloader
+enum basic_keycodes {
+    BEGIN = SAFE_RANGE, // Burn an enum member for allowing iteration
+    MD_BOOT,            // Restart into bootloader after hold timeout
+    DBG_TOG,            // DEBUG Toggle On / Off
+    DBG_MTRX,           // DEBUG Toggle Matrix Prints
+    DBG_KBD,            // DEBUG Toggle Keyboard Prints
+    DBG_MOU,            // DEBUG Toggle Mouse Prints
+    DBG_FAC,            // DEBUG Factory light testing (All on white)
+    END,                // Empty enum member, can be repeated
+};
+
+// MassDrop Keyboard custom keycodes
+enum md_keycodes {
+    MD_BEGIN = END,     // Burn an enum member for allowing iteration
+    L_BRI,              // LED Brightness Increase
     L_BRD,              // LED Brightness Decrease
     L_EDG_I,            // LED Edge Brightness Increase
     L_EDG_D,            // LED Edge Brightness Decrease
@@ -55,13 +69,12 @@ enum ctrl_keycodes {
     L_T_PTD,            // LED Toggle Scrolling Pattern Direction and effect
     U_T_AUTO,           // USB Extra Port Toggle Auto Detect / Always Active
     U_T_AGCR,           // USB Toggle Automatic GCR control
-    DBG_TOG,            // DEBUG Toggle On / Off
-    DBG_MTRX,           // DEBUG Toggle Matrix Prints
-    DBG_KBD,            // DEBUG Toggle Keyboard Prints
-    DBG_MOU,            // DEBUG Toggle Mouse Prints
-    DBG_FAC,            // DEBUG Factory light testing (All on white)
-    MD_BOOT,            // Restart into bootloader after hold timeout
-    // adambullmer custom keycodes
+    MD_END,             // Empty enum member, can be repeated
+};
+
+// adambullmer custom keycodes
+enum ab_keycodes {
+    AB_BEGIN = MD_END,  // Burn an enum member for allowing iteration
     AB_T_WL,            // Focus Windows Layout and all other layouts off
     AB_T_ML,            // Focus Mac Layout and all other layouts off
     AB_T_UL,            // Focus Ubuntu Layout and all other layouts off
@@ -79,7 +92,36 @@ enum ctrl_keycodes {
     AB_T_D5,            // Focus Display layer 5 and all other displays off
     AB_S_DU,            // Shift Display Layer Up
     AB_S_DD,            // Shift Display Layer Down
+    AB_END,             // Empty enum member, can be repeated
 };
+
+// GIT custom keycodes
+enum git_macro_keycodes {
+    G_BEGIN = AB_END,   // Burn an enum member for allowing iteration
+    G_INIT,             // git init
+    G_CLONE,            // git clone + paste
+    G_CONF,             // git config --global
+    G_ADD,              // git add -p
+    G_DIFF,             // git diff
+    G_RESET,            // git reset
+    G_REBAS,            // git rebase
+    G_BRANH,            // git branch
+    G_CHECK,            // git checkout
+    G_MERGE,         // git merge
+    G_REMTE,            // git remote add
+    G_FETCH,            // git fetch
+    G_PULL,             // git pull
+    G_PUSH,             // git push
+    G_COMM,             // git commit
+    G_STAT,             // git status
+    G_LOG,              // git log
+    G_TREE,             // git tree
+    G_END,
+};
+
+// Terminate commands that have no need for more inputs with `\n` to automatically submit
+#define git_macro_keycodes_length G_END - G_BEGIN - 1
+const char * sendstring_commands[git_macro_keycodes_length];
 
 #define RED        .r = 255, .g = 0,   .b = 0   // #ff0000
 #define ORANGE     .r = 255, .g = 103, .b = 0   // #ff6700
