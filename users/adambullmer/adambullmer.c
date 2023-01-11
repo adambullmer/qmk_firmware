@@ -8,7 +8,7 @@ const char * sendstring_commands[git_macro_keycodes_length] = {
     "git add -p\n",
     "git diff ",
     "git reset\n",
-    "git rsq", // rebase -i --autosquash
+    "git rsq\n", // rebase -i --autosquash
     "git branch ",
     "git checkout ",
     "git merge ",
