@@ -6,7 +6,7 @@
 #define TRANS_3  _______, _______, _______
 #define TRANS_2  _______, _______
 
-#define MEDIA_VOLUME KC_PSCR, KC_SLCK, KC_PAUS
+#define MEDIA_VOLUME KC_MUTE, KC_VOLD, KC_VOLU
 #define MEDIA_TOP    KC_INS,  KC_HOME, KC_PGUP
 #define MEDIA_BOTTOM KC_DEL,  KC_END,  KC_PGDN
 
