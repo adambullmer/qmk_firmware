@@ -120,6 +120,12 @@ enum git_macro_keycodes {
     G_END,
 };
 
+enum vim_macro_keycodes {
+    V_BEGIN = G_END,
+    V_LEADR,
+    V_END,
+};
+
 // Terminate commands that have no need for more inputs with `\n` to automatically submit
 #define git_macro_keycodes_length G_END - G_BEGIN - 1
 const char * sendstring_commands[git_macro_keycodes_length];
