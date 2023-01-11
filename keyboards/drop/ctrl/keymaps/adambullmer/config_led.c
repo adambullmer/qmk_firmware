@@ -82,14 +82,59 @@ led_instruction_t led_instructions[] = {
     // All LEDs use the user's selected pattern (this is the factory default)
     //  { .flags = LED_FLAG_USE_ROTATE_PATTERN },
 
-    // Per Layer Instructions
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _QW},
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _DV},
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _CM},
+    // Base Layer Instructions
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_ACCENT,            ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _QW, LED_IDS_BORDER_ACCENT,     ORANGE },
+
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_ACCENT,            ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _DV, LED_IDS_BORDER_ACCENT,     ORANGE },
+
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_ACCENT,            ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _CM, LED_IDS_BORDER_ACCENT,     ORANGE },
 
     // OS Layout Instructions
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _ML },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _UL },
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _ML },
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _UL },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_ACCENT,            RED },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _ML, LED_IDS_BORDER_ACCENT,     RED },
+
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_ACCENT,            PURPLE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _UL, LED_IDS_BORDER_ACCENT,     PURPLE },
+
+    // Display Layer Instructions
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_DARK_GREY,         DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_ACCENT,            ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_ACCENT,     ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_WASD,              ORANGE },
+
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D2 },
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D3 },
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D4 },
+
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D5 },
 
     // Shortcut Layer Instructions
      { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _GL, LED_IDS_GIT_KEYS, ORANGE },
@@ -100,40 +145,8 @@ led_instruction_t led_instructions[] = {
      { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _VL, LED_IDS_VIM_IMPORTANT_KEYS, RED },
      { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _VL, LED_IDS_VIM_LEADER_KEYS, TEAL },
 
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _L7, .pattern_id = 4 },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _L8, .pattern_id = 9 },
-
-    // Display Layer Instructions
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_DARK_GREY,         DARK_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_ACCENT,            ORANGE },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D1, LED_IDS_BORDER_ACCENT,     ORANGE },
-    // D1 Overrides Based on lower layer matches (not working)
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_ML), LED_IDS_ACCENT,        RED },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_ML), LED_IDS_BORDER_ACCENT, RED },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_UL), LED_IDS_ACCENT,        YELLOW },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_UL), LED_IDS_BORDER_ACCENT, YELLOW },
-
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_LIGHT_GREY,        LIGHT_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_DARK_GREY,         DARK_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_ACCENT,            ORANGE },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_WASD,              ORANGE },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_BORDER_LIGHT_GREY, LIGHT_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_BORDER_DARK_GREY,  DARK_GREY },
-     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _D2, LED_IDS_BORDER_ACCENT,     ORANGE },
-    // D2 Overrides Based on lower layer matches (not working)
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_ML), LED_IDS_ACCENT,        RED },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_ML), LED_IDS_BORDER_ACCENT, RED },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D2 | B_ML), LED_IDS_WASD,          RED},
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_UL), LED_IDS_ACCENT,        YELLOW },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D1 | B_UL), LED_IDS_BORDER_ACCENT, YELLOW },
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = (B_D2 | B_UL), LED_IDS_WASD,          YELLOW },
-
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D3},
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D4},
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _D5},
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _L3, .pattern_id = 4 },
+    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _L4, .pattern_id = 9 },
 
     //  Function Layer
      { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_PATTERN, .layer = _FN, LED_IDS_FN_DEBUG,        .pattern_id = 0 },

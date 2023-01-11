@@ -14,18 +14,18 @@ enum ctrl_layers {
     _ML,         // Mac Layout: Customize Function Row and Modifier Row
     _UL,         // Ubunutu Layout: Customize Function Row and Modifier Row
 
+    // LED Display Layouts -- Custom Coloring, no custom key codes
+    _D1,         // Display Layer 1: Gaming
+    _D2,         // Display Layer 2:
+    _D3,         // Display Layer 3
+    _D4,         // Display Layer 4
+    _D5,         // Display Layer 5: Default Pattern Rotation
+
     // Shortcut Layouts
     _GL,         // Git Shortcut Layout: Git CLI
     _VL,         // Vim Shortcut Layout: VIM
-    _L7,         // ___ Shortcut Layout
-    _L8,         // ___ Shortcut Layout
-
-    // LED Display Layouts -- Custom Coloring
-    _D1,         // Display Layer 1: Dwarvish/Durin Coloring
-    _D2,         // Display Layer 2: Gaming
-    _D3,         // Display Layer 3
-    _D4,         // Display Layer 4
-    _D5,         // Display Layer 5
+    _L3,         // ___ Shortcut Layout
+    _L4,         // ___ Shortcut Layout
 
     // Function / Meta Layouts
     _FN,         // Function Layout: The function key activated layout with default functions and some added ones
@@ -78,12 +78,6 @@ enum ab_keycodes {
     AB_T_WL,            // Focus Windows Layout and all other layouts off
     AB_T_ML,            // Focus Mac Layout and all other layouts off
     AB_T_UL,            // Focus Ubuntu Layout and all other layouts off
-    AB_T_GL,            // Toggle Focus Git Shortcut Layer and all other shortcuts off
-    AB_T_VL,            // Toggle Focus Vim Shortcut Layer and all other shortcuts off
-    AB_T_L7,            // Toggle Focus __ Shortcut Layer and all other shortcuts off
-    AB_T_L8,            // Toggle Focus __ Shortcut Layer and all other shortcuts off
-    AB_S_LU,            // Shift Shortcut Layer Up
-    AB_S_LD,            // Shift Shortcut Layer Down
     AB_T_D0,            // Unfocus All Display Layers
     AB_T_D1,            // Focus Display layer 1 and all other displays off
     AB_T_D2,            // Focus Display layer 2 and all other displays off
@@ -92,6 +86,12 @@ enum ab_keycodes {
     AB_T_D5,            // Focus Display layer 5 and all other displays off
     AB_S_DU,            // Shift Display Layer Up
     AB_S_DD,            // Shift Display Layer Down
+    AB_T_GL,            // Toggle Focus Git Shortcut Layer and all other shortcuts off
+    AB_T_VL,            // Toggle Focus Vim Shortcut Layer and all other shortcuts off
+    AB_T_L3,            // Toggle Focus __ Shortcut Layer and all other shortcuts off
+    AB_T_L4,            // Toggle Focus __ Shortcut Layer and all other shortcuts off
+    AB_S_LU,            // Shift Shortcut Layer Up
+    AB_S_LD,            // Shift Shortcut Layer Down
     AB_END,             // Empty enum member, can be repeated
 };
 

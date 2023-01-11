@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                              _______,
         _______, _______, V_LEADR,                   _______,                            _______, _______, _______, _______,            _______, _______, _______
     ),
-    [_L7] = LAYOUT_wrapper(
+    [_L3] = LAYOUT_wrapper(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                              _______,
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            _______, _______, _______
     ),
-    [_L8] = LAYOUT_wrapper(
+    [_L4] = LAYOUT_wrapper(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
@@ -129,8 +129,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //////////////////////////////////////////////////
     [_FN] = LAYOUT_wrapper(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,             KC_PSCR, KC_SCRL, KC_PAUS,
-        _______, DF(_QW), DF(_DV), DF(_CM), AB_T_WL, AB_T_ML, AB_T_UL, AB_T_GL, AB_T_VL, AB_T_L7, AB_T_L8, AB_S_LD, AB_S_LU, _______,   KC_MPLY, KC_MSTP, KC_VOLU,
-        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   L_EDG_I, _______, AB_T_D1, AB_T_D2, AB_T_D3, AB_T_D4, AB_T_D0, AB_S_DD, AB_S_DU, _______,   KC_MPRV, KC_MNXT, KC_VOLD,
+        _______, DF(_QW), DF(_DV), DF(_CM), AB_T_WL, AB_T_ML, AB_T_UL, AB_T_GL, AB_T_VL, AB_T_L3, AB_T_L4, AB_S_LD, AB_S_LU, _______,   KC_MPLY, KC_MSTP, KC_VOLU,
+        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   L_EDG_I, _______, AB_T_D1, AB_T_D2, AB_T_D3, AB_T_D4, AB_T_D5, AB_S_DD, AB_S_DU, AB_T_D0,   KC_MPRV, KC_MNXT, KC_VOLD,
         L_T_PTD, L_PTP,   L_BRD,   L_PTN,   L_EDG_D, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, L_T_MD,  L_T_ONF, _______, L_EDG_M, MD_BOOT, NK_TOGG, U_T_AGCR,_______, _______, _______, _______,                              _______,
         _______, _______, _______,                   _______,                            _______, _______, MO(_DB), _______,            _______, _______, _______
@@ -407,39 +407,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 layer_invert(_GL);
                 layer_off(_VL);
-                layer_off(_L7);
-                layer_off(_L8);
+                layer_off(_L3);
+                layer_off(_L4);
             }
             return false;
         case AB_T_VL:
             if (record->event.pressed) {
                 layer_off(_GL);
                 layer_invert(_VL);
-                layer_off(_L7);
-                layer_off(_L8);
+                layer_off(_L3);
+                layer_off(_L4);
             }
             return false;
-        case AB_T_L7:
+        case AB_T_L3:
             if (record->event.pressed) {
                 layer_off(_GL);
                 layer_off(_VL);
-                layer_invert(_L7);
-                layer_off(_L8);
+                layer_invert(_L3);
+                layer_off(_L4);
             }
             return false;
-        case AB_T_L8:
+        case AB_T_L4:
             if (record->event.pressed) {
                 layer_off(_GL);
                 layer_off(_VL);
-                layer_off(_L7);
-                layer_invert(_L8);
+                layer_off(_L3);
+                layer_invert(_L4);
             }
             return false;
         case AB_S_LU:
             if (record->event.pressed) {
-                int max = 1<<_L8;
+                int max = 1<<_L4;
                 int min = 1<<_GL;
-                int all_layouts = 1<<_GL | 1<<_VL | 1<<_L7 | 1<<_L8;
+                int all_layouts = 1<<_GL | 1<<_VL | 1<<_L3 | 1<<_L4;
                 int layout_state = layer_state & all_layouts;
                 int next_state = layer_state & ~all_layouts;
                 layout_state = (layout_state << 1);
@@ -456,9 +456,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case AB_S_LD:
             if (record->event.pressed) {
-                int max = 1<<_L8;
+                int max = 1<<_L4;
                 int min = 1<<_GL;
-                int all_layouts = 1<<_GL | 1<<_VL | 1<<_L7 | 1<<_L8;
+                int all_layouts = 1<<_GL | 1<<_VL | 1<<_L3 | 1<<_L4;
                 int layout_state = layer_state & all_layouts;
                 int next_state = layer_state & ~all_layouts;
                 layout_state = (layout_state >> 1);
