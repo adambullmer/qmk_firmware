@@ -60,6 +60,9 @@
 // debug_controls = [1,35,36,37]
 #define LED_IDS_DEBUG_CONTROLS .id0 = 1, .id1 = 28
 
+// git_keys = [36, 37, 38, 39, 42, 45, 46, 52, 53, 54, 55, 60, 66, 67, 68, 69, 70, 71, 72]
+#define LED_IDS_GIT_KEYS .id1 = 142094968, .id2 = 254
+
 // Converting Layer Indexes to Binary Flags
 #define B_D1 (1<<_D1)
 #define B_D2 (1<<_D2)
@@ -80,7 +83,8 @@ led_instruction_t led_instructions[] = {
      { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_ROTATE_PATTERN, .layer = _UL },
 
     // Shortcut Layer Instructions
-    //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _GL, .pattern_id = 2 },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _GL, LED_IDS_GIT_KEYS, ORANGE },
+     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = _GL, LED_IDS_BORDER, ORANGE },
     //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _VL, .pattern_id = 5 },
 
     //  { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_USE_PATTERN, .layer = _L7, .pattern_id = 4 },

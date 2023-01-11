@@ -20,4 +20,5 @@ const char * sendstring_commands[git_macro_keycodes_length] = {
     "git status\n",
     "git log\n",
     "git tree\n",
+    "git checkout -b ",
 };

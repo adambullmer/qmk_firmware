@@ -107,7 +107,7 @@ enum git_macro_keycodes {
     G_REBAS,            // git rebase
     G_BRANH,            // git branch
     G_CHECK,            // git checkout
-    G_MERGE,         // git merge
+    G_MERGE,            // git merge
     G_REMTE,            // git remote add
     G_FETCH,            // git fetch
     G_PULL,             // git pull
@@ -116,6 +116,7 @@ enum git_macro_keycodes {
     G_STAT,             // git status
     G_LOG,              // git log
     G_TREE,             // git tree
+    G_NBRAN,            // git checkout -b
     G_END,
 };
 

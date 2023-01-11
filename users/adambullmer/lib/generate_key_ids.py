@@ -36,6 +36,7 @@ media_controls = [31,32,33,48,49,50]
 led_controls = [34,35,36,37,38,51,52,53,54,55,65,66,68,76,85,86,87]
 qmk_controls = [1,69,70,71]
 debug_controls = [1,35,36,37]
+git_keys = [36,37,38,39,42,45,46,52,53,54,55,60,66,67,68,69,70,71,72]
 
 # Now using the "for instance" arrays, putting them into a dict. Again, modify this based on your needs.
 # However recommend doing it as a dict so the output is easier to parse, even if you only have one array
@@ -64,5 +65,6 @@ all_keys = {
     "led_controls": led_controls,
     "qmk_controls": qmk_controls,
     "debug_controls": debug_controls,
+    "git_keys": git_keys,
 }
 print_registers(all_keys)
