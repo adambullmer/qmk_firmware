@@ -53,8 +53,8 @@
 #define LED_IDS_SYSTEM_CONTROLS .id0 = 536870912, .id1 = 1073741824
 // media_controls = [31,32,33,48,49,50]
 #define LED_IDS_MEDIA_CONTROLS .id0 = 3221225472, .id1 = 229377
-// led_controls = [34,35,36,37,38,51,52,53,54,55,65,66,68,76,85,86,87]
-#define LED_IDS_LED_CONTROLS .id1 = 8126526, .id2 = 7342091
+// led_controls = [34, 35, 36, 37, 38, 51, 52, 53, 54, 65, 66, 67, 76, 85, 86, 87]
+#define LED_IDS_LED_CONTROLS .id1 = 3932222, .id2 = 7342087
 // qmk_controls = [1,69,70,71]
 #define LED_IDS_QMK_CONTROLS .id2 = 112
 // debug_controls = [1,35,36,37]

@@ -130,15 +130,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT_wrapper(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,             KC_PSCR, KC_SCRL, KC_PAUS,
         _______, DF(_QW), DF(_DV), DF(_CM), AB_T_WL, AB_T_ML, AB_T_UL, AB_T_GL, AB_T_VL, AB_T_L3, AB_T_L4, AB_S_LD, AB_S_LU, _______,   KC_MPLY, KC_MSTP, KC_VOLU,
-        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   L_EDG_I, _______, AB_T_D1, AB_T_D2, AB_T_D3, AB_T_D4, AB_T_D5, AB_S_DD, AB_S_DU, AB_T_D0,   KC_MPRV, KC_MNXT, KC_VOLD,
-        L_T_PTD, L_PTP,   L_BRD,   L_PTN,   L_EDG_D, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, L_T_MD,  L_T_ONF, _______, L_EDG_M, MD_BOOT, NK_TOGG, U_T_AGCR,_______, _______, _______, _______,                              _______,
-        _______, _______, _______,                   _______,                            _______, _______, MO(_DB), _______,            _______, _______, _______
+        L_T_BR,  L_PSD,   L_PSI,   L_EDG_I, _______, _______, AB_T_D1, AB_T_D2, AB_T_D3, AB_T_D4, AB_T_D5, AB_S_DD, AB_S_DU, AB_T_D0,   KC_MPRV, KC_MNXT, KC_VOLD,
+        L_T_PTD, L_PTP,   L_PTN,   L_EDG_D, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, L_T_MD,  L_T_ONF, L_EDG_M, _______, MD_BOOT, NK_TOGG, _______, _______, _______, _______, _______,                               L_BRI,
+        _______, _______, _______,                   _______,                            _______, _______, MO(_DB), _______,            L_RATIOD, L_BRD,  L_RATIOI
     ),
     [_DB] = LAYOUT_wrapper(
         DBG_TOG, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, DBG_KBD, DBG_MTRX,DBG_MOU, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
+        _______, DBG_KBD, DBG_MTRX,DBG_MOU, _______, _______, _______, U_T_AGCR,_______, _______, _______, _______, _______, _______,   _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                              _______,
         _______, _______, _______,                   DBG_FAC,                            _______, _______, _______, _______,            _______, _______, _______
@@ -288,37 +288,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case L_T_PTD:
             if (record->event.pressed) {
                 scroll_effect++;
-                if (scroll_effect == 1) {
-                    // Patterns with scroll move horizontal (Right to left)
-                    led_animation_direction = 1;
-                    led_animation_orientation = 0;
-                    led_animation_circular = 0;
-                } else if (scroll_effect == 2) {
-                    // Patterns with scroll move vertical (Top to bottom)
-                    led_animation_direction = 1;
-                    led_animation_orientation = 1;
-                    led_animation_circular = 0;
-                } else if (scroll_effect == 3) {
-                    // Patterns with scroll move vertical (Bottom to top)
-                    led_animation_direction = 0;
-                    led_animation_orientation = 1;
-                    led_animation_circular = 0;
-                } else if (scroll_effect == 4) {
-                    // Patterns with scroll explode from center
-                    led_animation_direction = 0;
-                    led_animation_orientation = 0;
-                    led_animation_circular = 1;
-                } else if (scroll_effect == 5) {
-                    // Patterns with scroll implode on center
-                    led_animation_direction = 1;
-                    led_animation_orientation = 0;
-                    led_animation_circular = 1;
-                } else {
-                    // Patterns with scroll move horizontal (Left to right)
-                    scroll_effect = 0;
-                    led_animation_direction = 0;
-                    led_animation_orientation = 0;
-                    led_animation_circular = 0;
+                switch (scroll_effect) {
+                    case 1:
+                        // Patterns with scroll move horizontal (Right to left)
+                        led_animation_direction = 1;
+                        led_animation_orientation = 0;
+                        led_animation_circular = 0;
+                        break;
+                    case 2:
+                        // Patterns with scroll move vertical (Top to bottom)
+                        led_animation_direction = 1;
+                        led_animation_orientation = 1;
+                        led_animation_circular = 0;
+                        break;
+                    case 3:
+                        // Patterns with scroll move vertical (Bottom to top)
+                        led_animation_direction = 0;
+                        led_animation_orientation = 1;
+                        led_animation_circular = 0;
+                        break;
+                    case 4:
+                        // Patterns with scroll explode from center
+                        led_animation_direction = 0;
+                        led_animation_orientation = 0;
+                        led_animation_circular = 1;
+                        break;
+                    case 5:
+                        // Patterns with scroll implode on center
+                        led_animation_direction = 1;
+                        led_animation_orientation = 0;
+                        led_animation_circular = 1;
+                        break;
+                    default:
+                        // Patterns with scroll move horizontal (Left to right)
+                        scroll_effect = 0;
+                        led_animation_direction = 0;
+                        led_animation_orientation = 0;
+                        led_animation_circular = 0;
                 }
             }
             return false;
