@@ -9,6 +9,7 @@ keymap_config_t keymap_config;
 // rows get expanded out before getting passed to the LAYOUT
 // macro.
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
+#define KC_MBKS RALT(KC_BACKSPACE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QW] = LAYOUT_wrapper(
@@ -129,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //////////////////////////////////////////////////
     [_FN] = LAYOUT_wrapper(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,             KC_PSCR, KC_SCRL, KC_PAUS,
-        _______, DF(_QW), DF(_DV), DF(_CM), AB_T_WL, AB_T_ML, AB_T_UL, AB_T_GL, AB_T_VL, AB_T_L3, AB_T_L4, AB_S_LD, AB_S_LU, _______,   KC_MPLY, KC_MSTP, KC_VOLU,
+        _______, DF(_QW), DF(_DV), DF(_CM), AB_T_WL, AB_T_ML, AB_T_UL, AB_T_GL, AB_T_VL, AB_T_L3, AB_T_L4, AB_S_LD, AB_S_LU, KC_MBKS,   KC_MPLY, KC_MSTP, KC_VOLU,
         L_T_BR,  L_PSD,   L_PSI,   L_EDG_I, _______, _______, AB_T_D1, AB_T_D2, AB_T_D3, AB_T_D4, AB_T_D5, AB_S_DD, AB_S_DU, AB_T_D0,   KC_MPRV, KC_MNXT, KC_VOLD,
         L_T_PTD, L_PTP,   L_PTN,   L_EDG_D, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, L_T_MD,  L_T_ONF, L_EDG_M, _______, MD_BOOT, NK_TOGG, _______, _______, _______, _______, _______,                               L_BRI,
