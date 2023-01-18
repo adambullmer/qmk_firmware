@@ -138,17 +138,44 @@ const char * sendstring_commands[git_macro_keycodes_length];
 #define BLUE       .r = 0,   .g = 0,   .b = 255 // #0000ff
 #define PURPLE     .r = 119, .g = 0,   .b = 153 // #770099
 #define WHITE      .r = 255, .g = 255, .b = 255 // #ffffff
-#define LIGHT_GREY .r = 230, .g = 228, .b = 215 // #e6e4d7
+#define LIGHT_GREY .r = 230, .g = 228, .b = 215 // #cccabe
 #define DARK_GREY  .r = 128, .g = 128, .b = 128 // #666666
 
 #define MONOKAI_MAGENTA    .r = 248, .g = 37,  .b = 112 // #f82570
 #define MONOKAI_ORANGE     .r = 252, .g = 150, .b = 31  // #fc961f
 #define MONOKAI_YELLOW     .r = 228, .g = 219, .b = 115 // #e4db73
 #define MONOKAI_GREEN      .r = 166, .g = 225, .b = 45  // #a6e12d
-#define MONOKAI_BLUE       .r = 102, .g = 217, .b = 238 // #66d9ee
+#define MONOKAI_CYAN       .r = 102, .g = 217, .b = 238 // #66d9ee
 #define MONOKAI_PURPLE     .r = 174, .g = 129, .b = 255 // #ae81ff
 #define MONOKAI_WHITE      .r = 253, .g = 255, .b = 241 // #fdfff1
 #define MONOKAI_LIGHT_GREY .r = 145, .g = 146, .b = 136 // #919288
 #define MONOKAI_DARK_GREY  .r = 59,  .g = 60,  .b = 53  // #3b3c35
 
+#define MONOKAI_S_MAGENTA    .r = 255, .g = 0,   .b = 89  // #ff0059 HSV s+15% v+3%
+#define MONOKAI_S_ORANGE     .r = 252, .g = 143, .b = 0   // #fc8600 HSV s+12%
+#define MONOKAI_S_YELLOW     .r = 227, .g = 208, .b = 0   // #e3d000 HSV s+50%
+#define MONOKAI_S_GREEN      .r = 150, .g = 224, .b = 0   // #96e000 HSV s+20%
+#define MONOKAI_S_CYAN       .r = 0  , .g = 201, .b = 237 // #00c9ed HSV s+43%
+#define MONOKAI_S_PURPLE     .r = 89,  .g = 0,   .b = 255 // #5900ff HSV s+51%
+#define MONOKAI_S_WHITE      .r = 253, .g = 255, .b = 241 // #ffffff HSV s-5%
+#define MONOKAI_S_LIGHT_GREY .r = 145, .g = 145, .b = 145 // #919191 HSV s-7%
+#define MONOKAI_S_DARK_GREY  .r = 61,  .g = 61,  .b = 61  // #3d3d3d HSV s-12%
 
+// DROP Keyboard Keycap Themes
+#define DWARVISH_LIGHT_GREY     .r = 229, .g = 227, .b = 211 // #e5e3d3
+#define DWARVISH_DARK_GREY      .r = 165, .g = 160, .b = 150 // #a5a096
+#define DWARVISH_DURIN          .r = 230, .g = 145, .b = 68  // #e69244
+#define DWARVISH_S_DURIN        .r = 245, .g = 53,  .b = 0   // #f53500 EVANSTAR HSV S+52%
+
+#define ELVISH_LIGHT_GREY       .r = 244, .g = 236, .b = 216 // #f4ecd8
+#define ELVISH_DARK_GREY        .r = 164, .g = 200, .b = 131 // #a4c883
+#define ELVISH_S_DARK_GREY      .r = 96,  .g = 199, .b = 0   // #60c700 HSV S+65%
+#define ELVISH_AUTUMN           .r = 250, .g = 186, .b = 123 // #faba7b
+#define ELVISH_S_AUTUMN         .r = 250, .g = 125, .b = 0   // #fa7d00 HSV S+39%
+#define ELVISH_EVANSTAR         .r = 246, .g = 152, .b = 127 // #f6997f
+#define ELVISH_S_EVANSTAR       .r = 201, .g = 13,  .b = 10  // #c90d0a MAGMA HSV S+52%
+
+#define BLACK_SPEECH_LIGHT_GREY .r = 130, .g = 130, .b = 130 // #828282
+#define BLACK_SPEECH_DARK_GREY  .r = 74 , .g = 76,  .b = 87  // #4a4c57
+#define BLACK_SPEECH_MAGMA      .r = 202, .g = 46,  .b = 43  // #ca2e2b
+#define BLACK_SPEECH_S_MAGMA    .r = 201, .g = 3,   .b = 0   // #c90300 HSV S+21%
