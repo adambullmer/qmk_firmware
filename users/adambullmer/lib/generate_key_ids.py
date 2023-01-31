@@ -11,7 +11,7 @@ def print_registers(all_keys):
         print(f'// {key_group_name} = {key_group_keys}')
         print(f'#define LED_IDS_{key_group_name.upper()} .id0 = {registers[0]}, .id1 = {registers[1]}, .id2 = {registers[2]}, .id3 = {registers[3]}')
 
-dark_gray = [1,6,7,8,9,14,15,16,17,30,31,32,33,34,47,48,49,50,51,63,64,75,76,77,78,79,81,82,83,84,85,86,87]
+dark_grey = [1,6,7,8,9,14,15,16,17,30,31,32,33,34,47,48,49,50,51,63,64,75,76,77,78,79,81,82,83,84,85,86,87]
 light_grey = [2,3,4,5,10,11,12,13,18,19,20,21,22,23,24,25,26,27,28,29,35,36,37,38,39,40,41,42,43,44,45,46,52,53,54,55,56,57,58,59,60,61,62,65,66,67,68,69,70,71,72,73,74,80]
 
 border = range(88,120)
@@ -45,8 +45,8 @@ vim_important_keys = [1,51,61]
 # Now using the "for instance" arrays, putting them into a dict. Again, modify this based on your needs.
 # However recommend doing it as a dict so the output is easier to parse, even if you only have one array
 all_keys = {
-    "dark_gray": dark_gray,
-    "light_gray": light_gray,
+    "dark_grey": dark_grey,
+    "light_grey": light_grey,
     "border": border,
     "border_light_grey": border_light_grey,
     "border_dark_grey": border_dark_grey,
