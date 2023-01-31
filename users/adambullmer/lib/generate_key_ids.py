@@ -18,6 +18,7 @@ border = range(88,120)
 border_light_grey = [105,106,107,108,111,112,113,114]
 border_dark_grey = [91,92,93,98,99,100,101,102,103,109,110,115,116,117,118]
 border_accent = [88,89,90,94,95,96,97,104,119]
+esc = [1]
 fn = [82]
 fn_db = [82,83]
 wasd = [36,52,53,54]
@@ -53,6 +54,7 @@ all_keys = {
     "border_accent": border_accent,
     "fn": fn,
     "fn_db": fn_db,
+    "esc": esc,
     "wasd": wasd,
     "arrow": arrow,
     "accent": accent,
