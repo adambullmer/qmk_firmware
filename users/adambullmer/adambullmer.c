@@ -13,7 +13,7 @@ const char * sendstring_commands[git_macro_keycodes_length] = {
     "git checkout ",
     "git merge ",
     "git remote add ",
-    "git fetch ",
+    "git fetch-origin-prune\n",
     "git pull ",
     "git push ",
     "git commit -m \"",
@@ -21,4 +21,5 @@ const char * sendstring_commands[git_macro_keycodes_length] = {
     "git log\n",
     "git tree\n",
     "git checkout -b ",
+    "git fixup ",
 };

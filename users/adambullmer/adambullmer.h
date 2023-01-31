@@ -117,6 +117,7 @@ enum git_macro_keycodes {
     G_LOG,              // git log
     G_TREE,             // git tree
     G_NBRAN,            // git checkout -b
+    G_FIXUP,            // git fixup
     G_END,
 };
 
